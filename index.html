@@ -61,8 +61,12 @@
     </style>
     <script>
         function showPaymentPrompt(amount) {
-            alert(`Pay Ksh ${amount} to till 3133426`);
-        }
+    const confirmation = confirm(`Pay Ksh ${amount} to till 3133426.
+Click OK to copy the till number.`);
+    if (confirmation) {
+        copyTillNumber();
+    }
+}
         
         function copyTillNumber() {
             navigator.clipboard.writeText("3133426").then(() => {
