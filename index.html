@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service.starlink.ke</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0a7e07;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+        .payment-info {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: olivedrab;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .till-info {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        .copy-btn {
+            background-color: #28a745;
+        }
+        .copy-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+    <script>
+        function showPaymentPrompt(amount) {
+            alert(`Pay Ksh ${amount} to till 3133426`);
+        }
+        
+        function copyTillNumber() {
+            navigator.clipboard.writeText("3133426").then(() => {
+                alert("Till number copied!");
+            }).catch(err => {
+                alert("Failed to copy: " + err);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Package</h1>
+        <div class="payment-info">starlink home <i>only Safaricom</i></div>
+        <button onclick="showPaymentPrompt(80)">7 Days - 5GB (Ksh 80)</button>
+        <button onclick="showPaymentPrompt(250)">7 Days - 10GB (Ksh 250)</button>
+        <button onclick="showPaymentPrompt(400)">21 Days - 50GB (Ksh 400)</button>
+        <button onclick="showPaymentPrompt(600)">31 Days - Unlimited (Ksh 600)</button>
+        
+        <div class="till-info">Till Number: <strong>3133426</strong></div>
+        <button class="copy-btn" onclick="copyTillNumber()">Copy Till</button>
+    </div>
+</body>
+</html>
